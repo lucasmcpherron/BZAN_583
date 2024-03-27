@@ -1,0 +1,26 @@
+Result1:
+Hostname is used to display the system's Domain Name System name, and to display or
+set its hostname or NIS domain name.
+date prints or sets system date and time.
+w shows who is logged in and what they’re doing.
+whoami prints the effective user id.
+ls “lists” the directory contents.
+Pwd prints the path or name of the current/working directory
+mkdir R creates a directory named “R.”
+ls ^^
+ls -a  shows hidden files as well as directory contents.
+ls -la shows the files in a folder in long form, including hidden files.
+ls -laF --color shows hidden files in long format, while colorizing the output. 
+cd R makes R the working directory; cd is how we navigate between files.
+Pwd prints out the pathway to get to the “R” file.
+cd alone takes us back to the original directory (user in this case)
+pwd prints out the pathway of the current directory.
+module load r loads the R programming language into the current environment
+module list lists all loaded modules
+Rscript -e "sessionInfo()" runs the sessionInfo() command found in the R module
+
+Result2:
+man is an interface to the on-line reference manuals: a definition book.
+
+Result3:
+GitHub username: lucasmcpherron
