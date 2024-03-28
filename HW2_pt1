@@ -1,3 +1,6 @@
-My code was used in our capstone project to clean some data for the company we worked for. 
-The observations were in 5 minute, 15 minute, one hour and daily intervals. 
-This code is how we coerced the data to all 15 minute observations to give our modeling a constant time interval.
+My code is comprised of two for loops: 
+one simulates a single round of golf while the second simulates this process 10,000 times to report the 
+average course par, average total strokes, and average strokes relative to par. 
+In the round for loop, we sample to choose a par for the hole and a score for the hole based on a probs argument, and then
+a scorecard is created to represent the totality of the round.
+Finally, this process is repeated 10,000 times and then averages mentioned above are all reported.
