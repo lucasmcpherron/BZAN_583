@@ -1,0 +1,37 @@
+/u/lmcpherr/BZAN_583
+loaded R
+$by.self
+                self.time self.pct total.time total.pct
+"La.svd"             5.12    83.93       5.30     86.89
+"aperm.default"      0.34     5.57       0.34      5.57
+"any"                0.12     1.97       0.12      1.97
+"colMeans"           0.12     1.97       0.12      1.97
+"is.finite"          0.12     1.97       0.12      1.97
+"svd"                0.10     1.64       5.52     90.49
+"array"              0.08     1.31       0.08      1.31
+"matrix"             0.06     0.98       0.06      0.98
+"sweep"              0.04     0.66       0.46      7.54
+
+$by.total
+                 total.time total.pct self.time self.pct
+"prcomp.default"       6.10    100.00      0.00     0.00
+"prcomp"               6.10    100.00      0.00     0.00
+"svd"                  5.52     90.49      0.10     1.64
+"La.svd"               5.30     86.89      5.12    83.93
+"scale.default"        0.58      9.51      0.00     0.00
+"scale"                0.58      9.51      0.00     0.00
+"sweep"                0.46      7.54      0.04     0.66
+"aperm"                0.42      6.89      0.00     0.00
+"aperm.default"        0.34      5.57      0.34     5.57
+"any"                  0.12      1.97      0.12     1.97
+"colMeans"             0.12      1.97      0.12     1.97
+"is.finite"            0.12      1.97      0.12     1.97
+"array"                0.08      1.31      0.08     1.31
+"matrix"               0.06      0.98      0.06     0.98
+
+$sample.interval
+[1] 0.02
+
+$sampling.time
+[1] 6.1
+

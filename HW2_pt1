@@ -1,0 +1,3 @@
+My code was used in our capstone project to clean some data for the company we worked for. 
+The observations were in 5 minute, 15 minute, one hour and daily intervals. 
+This code is how we coerced the data to all 15 minute observations to give our modeling a constant time interval.
