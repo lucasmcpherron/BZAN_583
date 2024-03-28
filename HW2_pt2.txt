@@ -1,0 +1,93 @@
+par_course <- numeric(10000)
+total_strokes_round <- numeric(10000)
+total_score_round <- numeric(10000)
+
+# Simulate the golf round 10,000 times
+for (sim in 1:10000) {
+  total_strokes <- 0
+  total_score <- 0
+
+  # Initialize a dataframe to store par and strokes for each hole
+  scorecard <- data.frame(Hole = 1:18, Par = integer(18), Strokes =
+integer(18))
+
+  # Simulate each hole
+  for (hole in 1:18) {
+    # Choose par for the hole
+    par <- sample(c(3, 4, 5), 1, prob = c(0.4, 0.4, 0.2))
+
+    # Simulate strokes for the hole
+    strokes_to_par <- sample(c(-2, -1, 0, 1, 2, 3), 1, prob = c(0.03,
+0.17, 0.55, 0.18, 0.05, 0.02)) + par - 4
+
+    # Store par and strokes for the hole in the scorecard dataframe
+    scorecard$Par[hole] <- par
+    scorecard$Strokes[hole] <- strokes_to_par
+
+    # Update total strokes and total score relative to par
+    total_strokes <- total_strokes + strokes_to_par + par
+    total_score <- total_score + (strokes_to_par + par)
+  }
+
+  # Store results for the current iteration
+  par_course[sim] <- sum(scorecard$Par)
+  total_strokes_round[sim] <- total_strokes
+  total_score_round[sim] <- total_strokes - sum(scorecard$Par)
+}
+
+# Calculate averages
+avg_par_course <- mean(par_course)
+avg_total_strokes <- mean(total_strokes_round)
+avg_total_score <- mean(total_score_round)
+
+# Print the results
+cat("Average par for the course:", avg_par_course, "\n")
+cat("Average total strokes for the round:", avg_total_strokes, "\n")
+cat("Average total score relative to par for the round:", avg_total_score,
+"\n")
+
+                         self.time self.pct total.time total.pct
+"sample.int"                  1.02    19.32	  1.72     32.58
+"$<-.data.frame"              0.92    17.42	  1.10     20.83
+"stopifnot"                   0.36     6.82	  0.62     11.74
+"sample"                      0.34     6.44	  2.10     39.77
+"$<-"                         0.26     4.92	  1.36     25.76
+"as.data.frame.integer"       0.22     4.17	  0.98     18.56
+".deparseOpts"                0.18     3.41	  0.36      6.82
+"c"                           0.18     3.41	  0.18      3.41
+"all"                         0.12     2.27	  0.12      2.27
+"deparse"                     0.10     1.89	  0.50      9.47
+"...elt"                      0.10     1.89	  0.12      2.27
+"$"                           0.10     1.89	  0.10      1.89
+"pmatch"                      0.10     1.89	  0.10      1.89
+"data.frame"                  0.08     1.52	  1.68     31.82
+"as.data.frame"               0.08     1.52	  1.06     20.08
+"paste"                       0.08     1.52	  0.58     10.98
+"make.names"                  0.08     1.52	  0.28      5.30
+"as.list"                     0.08     1.52	  0.14      2.65
+"structure"                   0.08     1.52	  0.12      2.27
+".row_names_info"             0.08     1.52	  0.08      1.52
+"length"                      0.08     1.52	  0.08      1.52
+"NROW"                        0.08     1.52	  0.08      1.52
+"order"                       0.06     1.14	  0.16      3.03
+"as.list.default"             0.06     1.14	  0.06      1.14
+"%in%"                        0.04     0.76	  0.22      4.17
+"any"                         0.04     0.76	  0.04      0.76
+"is.atomic"                   0.04     0.76	  0.04      0.76
+"make.unique"                 0.04     0.76	  0.04      0.76
+"names"                       0.04     0.76	  0.04      0.76
+"sum"                         0.04     0.76	  0.04      0.76
+"force"                       0.02     0.38	  0.60     11.36
+"vapply"                      0.02     0.38	  0.06      1.14
+"sys.function"                0.02     0.38	  0.04      0.76
+"...length"                   0.02     0.38	  0.02      0.38
+"getSetterInlineHandler"      0.02     0.38	  0.02      0.38
+"is.call"                     0.02     0.38	  0.02      0.38
+"logical"                     0.02     0.38	  0.02      0.38
+"match.fun"                   0.02     0.38	  0.02      0.38
+"sys.parent"                  0.02     0.38	  0.02      0.38
+"unlist"                      0.02     0.38	  0.02      0.38
+
+real    0m6.193s
+user    0m6.064s
+sys     0m0.056s
