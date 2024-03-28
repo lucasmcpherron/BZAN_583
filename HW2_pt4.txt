@@ -1,0 +1,7 @@
+In short, all I did was vectorize the two for loops, which decreased the time running in R from about 10 seconds to near instantaneous. 
+This is backed up by the output from sbatch which indicates we went from about 7 seconds of run time down to .2 seconds just by vectorizing the for loop process. 
+It got so low that sbatch couldn't even recognize which objects were taking up the most time because each part was taking up so little time. 
+
+P.S. I confirmed with other students that you had indicated that even though the initial time wasn't over 30 seconds, 
+it would be fine as long as it was a noticeable difference in the speed at which the code ran. 
+I'd say a decrease of 350 times is a pretty noticeable improvement.
